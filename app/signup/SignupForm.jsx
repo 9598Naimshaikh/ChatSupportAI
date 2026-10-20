@@ -159,7 +159,7 @@ export default function SignupPage() {
             <div className="rounded-3xl border border-gray-200 bg-white p-7 shadow-[0_20px_70px_rgba(0,0,0,0.08)] sm:p-8">
 
               {/* Google Button */}
-              <button
+              {/* <button
                 type="button"
                 className="flex w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium transition hover:bg-gray-50"
               >
@@ -188,10 +188,10 @@ export default function SignupPage() {
                 </svg>
 
                 Continue with Google
-              </button>
+              </button> */}
 
               {/* Divider */}
-              <div className="my-6 flex items-center gap-4">
+              {/* <div className="my-6 flex items-center gap-4">
                 <div className="h-px flex-1 bg-gray-200" />
 
                 <span className="text-xs text-gray-400">
@@ -199,7 +199,7 @@ export default function SignupPage() {
                 </span>
 
                 <div className="h-px flex-1 bg-gray-200" />
-              </div>
+              </div> */}
 
               {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-5">
