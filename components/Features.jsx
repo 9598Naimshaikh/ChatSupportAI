@@ -49,15 +49,15 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.number}
-              className="rounded-xl border border-gray-200 bg-gray-50 p-6 transition hover:border-gray-300 hover:shadow-sm"
+              className="rounded-xl border border-gray-200 bg-gray-50 p-6 transition hover:border-gray-300 hover:shadow-sm hover:scale-101"
             >
               {/* Number */}
-              <span className="text-[10px] font-semibold text-gray-400">
+              <span className="text-lg font-semibold text-gray-400">
                 {feature.number}
               </span>
 
               {/* Title */}
-              <h3 className="mt-6 text-sm font-semibold text-gray-900">
+              <h3 className="mt-4 text-md font-semibold text-gray-900">
                 {feature.title}
               </h3>
 

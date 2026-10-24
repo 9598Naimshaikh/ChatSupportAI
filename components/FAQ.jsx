@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
@@ -38,15 +39,10 @@ export default function FAQ() {
   };
 
   return (
-    <section
-      id="faq"
-      className="bg-white px-6 py-24"
-    >
+    <section id="faq" className="bg-white px-6 py-24">
       <div className="mx-auto max-w-3xl">
-
         {/* Heading */}
         <div className="text-center">
-
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">
             FAQ
           </p>
@@ -58,22 +54,28 @@ export default function FAQ() {
           <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-gray-500">
             Everything you need to know about ChatSupportAI.
           </p>
-
         </div>
 
         {/* FAQ Container */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-gray-200">
-
+        <div className="mt-12 overflow-hidden rounded-2xl border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div
                 key={faq.question}
-                className={`border-b border-gray-200 last:border-b-0 transition-colors duration-300 ${
-                  isOpen ? "bg-gray-50/70" : "bg-white"
+                className={`relative border-b border-gray-200 last:border-b-0 transition-all duration-300 ${
+                  isOpen
+                    ? "bg-gray-50"
+                    : "bg-white hover:bg-gray-50/40"
                 }`}
               >
+                {/* Active Left Border */}
+                <div
+                  className={`absolute left-0 top-0 h-full w-[2px] bg-black transition-all duration-300 ${
+                    isOpen ? "opacity-100" : "opacity-0"
+                  }`}
+                />
 
                 {/* Question */}
                 <button
@@ -81,69 +83,68 @@ export default function FAQ() {
                   onClick={() => toggleFAQ(index)}
                   className="group flex w-full items-center justify-between gap-6 px-6 py-6 text-left md:px-7"
                 >
-
                   <div className="flex items-center gap-4">
-
                     {/* Number */}
-                    <span className="text-[10px] font-medium text-gray-400">
+                    <span className="text-md font-medium text-gray-400">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
                     {/* Question */}
                     <span
-                      className={`text-sm font-medium transition-colors duration-300 ${
+                      className={`text-sm font-medium transition-all duration-300 ${
                         isOpen
-                          ? "text-gray-900"
+                          ? "text-black"
                           : "text-gray-700 group-hover:text-black"
                       }`}
                     >
                       {faq.question}
                     </span>
-
                   </div>
 
-                  {/* Animated Plus */}
+                  {/* Modern Chevron Icon */}
                   <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-all duration-300 ${
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                       isOpen
-                        ? "rotate-45 bg-black text-white"
-                        : "bg-white group-hover:border-gray-400"
+                        ? "border-black bg-black text-white shadow-sm"
+                        : "border-gray-200 bg-white text-gray-500 group-hover:border-gray-400"
                     }`}
                   >
-                    <span className="text-lg font-light leading-none">
-                      +
-                    </span>
+                    <ChevronDown
+                      size={18}
+                      strokeWidth={2.5}
+                      className={`transition-transform duration-300 ease-out ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
                   </span>
-
                 </button>
 
-                {/* Animated Answer */}
+                {/* Answer */}
                 <div
-                  className={`grid transition-all duration-200 ease-in-out ${
+                  className={`grid transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
                     isOpen
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
                   <div className="overflow-hidden">
-
-                    <div className="px-6 pb-6 pl-[4.4rem] pr-12 md:px-6 md:pl-14">
-
+                    <div
+                      className={`px-6 pb-6 pl-[4.4rem] pr-12 md:px-6 md:pl-14 transition-all duration-300 ${
+                        isOpen
+                          ? "translate-y-0 opacity-100"
+                          : "-translate-y-2 opacity-0"
+                      }`}
+                    >
                       <p className="max-w-2xl text-sm leading-6 text-gray-500">
                         {faq.answer}
                       </p>
-
                     </div>
-
                   </div>
                 </div>
-
               </div>
             );
           })}
-
         </div>
-
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="mb-5 inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1">
           <span className="mr-2 h-1.5 w-1.5 rounded-full bg-black"></span>
 
-          <span className="text-[10px] text-gray-600">
+          <span className="text-[12px] tracking-wide text-gray-600">
             AI-powered customer support
           </span>
         </div>
@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="mt-7">
           <a
             href="/signup"
-            className="inline-flex items-center rounded-md bg-black px-6 py-3 text-xs font-medium text-white transition hover:bg-gray-800"
+            className="inline-flex items-center rounded-md bg-black px-6 py-3 text-xs font-medium text-white transition hover:bg-gray-800 hover:scale-105 active:scale-95"
           >
             Get Started — Its Free
           </a>
