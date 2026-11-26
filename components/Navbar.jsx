@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b border-gray-100 bg-white">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+    <nav className="w-full border-b border-gray-100 bg-white px-4 lg:px-0">
+      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between">
 
         {/* Logo */}
         <Link
@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* Sign In */}
         <Link
           href="/login"
-          className="rounded-md bg-black px-5 py-2 text-sm hover:scale-105 active:scale-95 font-medium text-white transition hover:bg-gray-800"
+          className="rounded-[1px] px-5 py-2 text-sm hover:scale-105 active:scale-95 font-medium transition hover:bg-zinc-700 hover:text-white border"
         >
           Sign In
         </Link>

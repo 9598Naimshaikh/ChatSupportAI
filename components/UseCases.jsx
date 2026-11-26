@@ -40,7 +40,7 @@ export default function UseCases() {
     <section id="use-cases" className="bg-gray-50 px-6 py-20">
       <div className="mx-auto max-w-5xl">
         {/* Section Heading */}
-        <div className="text-center">
+        <div className="">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-400">
             Use Cases
           </p>
@@ -49,7 +49,7 @@ export default function UseCases() {
             Built for modern businesses.
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 tracking-wide text-gray-500">
+          <p className=" mt-4 max-w-xl text-sm leading-6 tracking-wide text-gray-500">
             Give your customers instant answers with an AI assistant that
             understands your business.
           </p>
